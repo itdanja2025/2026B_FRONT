@@ -173,15 +173,41 @@ console.log( `결과2 : ${ 결과2 }`)
 */
 
 // [지문8] 1차점수 와 2차점수 prompt함수로 각 입력받아서 총점이 150점이상이면 '합격' 아니면 '불합격' HTML의 <h3> 에 출력하시오.
+/*
 let 점수1차 = Number( prompt('1차점수 : ') )
 let 점수2차 = Number( prompt('2차점수 : ') )
 let 결과 = (점수1차+점수2차) >= 150 ? '합격' : '불합격' // 삼항연산자란?  조건식 ? 참 : 거짓 
 // document(html문서).querySelector(선택자요청).innerHTML(해당마크업사이)
 document.querySelector( "h3" ).innerHTML = `결과 : ${결과}`
+*/
 
 // [지문9] 두 사람의 이름을 prompt함수로 각 입력받아서 만일 이름이 '유재석' 이면 뒤에 (방장) 이라고 이름 뒤에 붙이고 아니면 생략한다.  HTML의 <ol> 에 결과를 출력하시오.
+/*
 let 이름1 = prompt( '첫번째 이름: ')
 let 이름2 = prompt( '두번째 이름: ')
 let 결과1 = 이름1 == '유재석' ? 이름1+"(방장)" : 이름1
 let 결과2 = 이름2 == '유재석' ? 이름2+"(방장)" : 이름2
 document.querySelector('ol').innerHTML = `<li> ${ 결과1} </li> <li> ${ 결과2 } </li>`
+*/
+
+// 증감연산자 
+let age = 40 
+console.log( age++ )  // 40 , 즉] 출력후에 증가, 후위증가:현재 명령어단위에서 가장 마지막에 처리
+console.log( ++age )  // 42,  즉] 출력전에 증가, 선위증가: 현재 명령어단위에서 먼저 처리 
+console.log( --age )  // 41 , 선위감소 
+console.log( age-- )  // 41 , 후위감소
+
+// 변수에 1증가 코드 
+age++           // 증감연산자 
+// vs 
+age = age + 1   // 산술연산자
+// vs 
+age += 1       // 복합대입연산자 , += 대입하기전에 오른쪽 항을 왼쪽에 연산 후 대입 
+
+
+
+
+
+
+
+
