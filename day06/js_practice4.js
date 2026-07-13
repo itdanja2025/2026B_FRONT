@@ -132,5 +132,28 @@ for( let index = 0 ; index <= movieNames.length - 1 ; index++ ){
     // 줄바꿈 처리 <br />
     html += '<br />'
 } // for end 
-document.querySelector('p').innerHTML = html // html 출력 
+document.querySelector('p').innerHTML = html // html 출력
 
+/*문제 9: 좌석 예약 상태 표시하기
+총 6개의 좌석 상태 정보가 담긴 배열을 이용하여, 좌석 배치도와 상태를 HTML에 출력하는 프로그램을 작성하시오.
+좌석 상태에 따라  태그에 CSS 색상을 다르게 적용합니다. CSS예] <span style="color: blue;"> 좌석 </span>
+'빈좌석': color: blue;  '예약석': color: red;
+좌석은 2칸씩 3줄 형태로 배치합니다.
+(3). 출력 예시 (HTML)
+빈좌석 예약석 
+예약석 빈좌석
+예약석 빈좌석
+*/
+let seatStatus = ['빈좌석', '예약석', '예약석', '빈좌석', '예약석', '빈좌석'];
+let html2 = ''
+for( let index = 0 ; index <= seatStatus.length - 1 ; index++ ){
+    // 만약에 빈좌석이면 blue , 예약성 red 
+    if( seatStatus[index] == '빈좌석' ){
+        html2 += `<span style="color:blue;"> ${ seatStatus[index] } </span>`
+    }else{
+        html2 += `<span style="color:red;"> ${ seatStatus[index] } </span>`
+    }
+    // 2배수 마다 줄바꿈 한다.
+    if( (index+1) % 2 == 0){  html2 += '<br />' }
+}
+document.querySelector('div').innerHTML = html2;
