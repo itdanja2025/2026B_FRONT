@@ -61,3 +61,33 @@ for( let row = 0 ; row <= seatLayout.length - 1 ; row++ ){ //  0행 부터 2행 
         console.log(  seatLayout[row][col] )
     } // for2 end 
 } // for1 end 
+
+
+/*문제 5: 배열의 중복 요소 제거하기
+주어진 배열에서 중복된 요소를 제거하고, 중복 없는 새로운 배열을 만들어 출력하시오.
+힌트: 새로운 배열을 만들고, for 반복문으로 기존 배열을 순회하며 새로운 배열에 해당 요소가 없을( .indexOf() == -1 ) 때만 추가(push())합니다.*/
+let numbers2 = [1, 5, 2, 3, 5, 1, 4, 2]
+let newNumbers = [ ] 
+for( let index = 0 ; index <= numbers2.length-1 ; index++){
+    let num = numbers2[index]; // index번째 값이 
+    if( newNumbers.indexOf( num ) == -1 ){ // 새로운배열에 존재하지 않으면 
+        newNumbers.push( num ) // 새로운배열에 저장한다. push( 새로운값 )
+    }
+}
+console.log( newNumbers )
+/*문제 6: 버블 정렬 (Bubble Sort) 구현하기
+주어진 숫자 배열을 '버블 정렬' 알고리즘을 이용하여 오름차순으로 정렬하고, 최종 정렬된 배열을 출력하시오.
+힌트: 중첩 for 반복문을 사용하며, 이웃한 두 요소를 비교하 위치를 바꿉니다.*/
+let numbers3 = [5, 3, 4, 1, 2] // 5>3 , 5>4 , 5>1 , 5>2 [4] 3>4 , 3>1 , 3>2 [3] , 4>1 , 4>2 [2] , 1>2 [1]
+// 비교기준(인덱스) : 0            1         2          3  
+// 비교대상 :       1 2 3 4 ,    2 3 4     3 4          4   , 비교기준 +1 부터 마지막인덱스까지 
+for( let i = 0 ;  i <= numbers3.length - 2 ; i++ ){ // i는 0부터 마지막인덱스 전 까지
+    for( let j = i+1 ; j <= numbers3.length - 1 ; j++ ){ // j는 i+1 부터 마지막인덱스 까지 
+        if( numbers3[i] > numbers3[j] ){ // 비교기준이 비교대상 보다 더 크면 
+            let temp = numbers3[i] // 스왑(두 변수간 값 교체) , i = 5 , j = 3 , temp = 5*
+            numbers3[i] = numbers3[j] //  i = 3* , j = 3 , temp = 5
+            numbers3[j] = temp;       //  i = 3 , j = 5* , temp = 5
+        }   
+    }
+}
+console.log( numbers3 )
