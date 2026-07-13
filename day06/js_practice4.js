@@ -75,6 +75,7 @@ for( let index = 0 ; index <= numbers2.length-1 ; index++){
     }
 }
 console.log( newNumbers )
+
 /*문제 6: 버블 정렬 (Bubble Sort) 구현하기
 주어진 숫자 배열을 '버블 정렬' 알고리즘을 이용하여 오름차순으로 정렬하고, 최종 정렬된 배열을 출력하시오.
 힌트: 중첩 for 반복문을 사용하며, 이웃한 두 요소를 비교하 위치를 바꿉니다.*/
@@ -91,3 +92,45 @@ for( let i = 0 ;  i <= numbers3.length - 2 ; i++ ){ // i는 0부터 마지막인
     }
 }
 console.log( numbers3 )
+
+/*문제 7: 재고 관리 시스템
+두 개의 배열 products(상품 목록)와 stock(재고 수량)이 있습니다. 
+사용자로부터 구매할 상품명과 수량을 입력받아, 재고가 충분하면 "구매 완료!"를 출력하고 재고를 차감하세요. 
+재고가 부족하면 "재고가 부족합니다."를 출력합니다. * 배열 includes 함수 사용 시 for문 사용 안 함.*/
+let products = ['볼펜', '노트', '지우개'];
+let stock = [10, 5, 20];
+let 상품명 = prompt('상품명 입력:') 
+let 수량 = Number( prompt('수량 입력: ') )
+// 1. 입력받은 상품명이 존재 하는지 확인 ( 배열에 모든 자료들과 비교 )
+for( let index = 0 ; index <= products.length - 1 ; index++ ){
+    if( products[index] == 상품명 ){ // 만약에 index 번째 값 과 입력받은 값 과 같으면 
+        // 2. 재고 비교 
+        if( stock[index] >= 수량 ){ // 만약에 index 번째 재고값 이 입력받은 수량 이상이면 
+            console.log( '구매 완료')
+            stock[index] = stock[index] - 수량 // 재고 차감 // vs stock[index] -= 수량 
+        }else{
+            console.log( '재고가 부족합니다.')
+        }
+    }
+} // for end 
+/*문제 8: 영화 평점 시각화하기: 주어진 영화 이름과 평점 배열을 이용하여, 각 영화의 평점을 별(★)로 시각화하여 HTML에 출력하는 프로그램을 작성하시오.*/
+let movieNames = ['히든페이스', '위키드', '글래디에이터2', '청설'];
+let movieRatings = [8, 4, 7, 6];
+
+let html = '' // html에 출력할 문자열 변수 
+for( let index = 0 ; index <= movieNames.length - 1 ; index++ ){
+    html += movieNames[index]; // index 번째 영화 이름을 대입 
+    // 평점(별) 출력하기 
+    for( let star = 1 ;  star <= 10 ; star++ ){
+        // 만약에 현재 별이 평점보다 이하 이면 검은별 
+        if( star <= movieRatings[index] ){
+            html += '★' // ㅁ+한자키 
+        }else{ // 크면 흰별 
+            html += '☆'
+        }
+    }
+    // 줄바꿈 처리 <br />
+    html += '<br />'
+} // for end 
+document.querySelector('p').innerHTML = html // html 출력 
+
