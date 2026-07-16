@@ -58,6 +58,7 @@ if( find == false ){ console.log( '상품을 찾을 수 없습니다.'); }
 */
 
 /*문제 5: 객체 배열 필터링하기 */
+/*
 const users = [{ id: 1, name: '유저1', isActive: true },{ id: 2, name: '유저2', isActive: false },{ id: 3, name: '유저3', isActive: true },{ id: 4, name: '유저4', isActive: false }];
 const activeUsers = [ ] // 1. 새로운 빈 배열 만든다. 
 for( let index = 0 ; index <= users.length-1 ; index++ ){// 2. 기존 배열을 0번 인덱스 부터 마지막 인덱스까지 순회
@@ -67,16 +68,18 @@ for( let index = 0 ; index <= users.length-1 ; index++ ){// 2. 기존 배열을 
     } // if end 
 } // for end 
 console.log( activeUsers )
-
+*/
 /*문제 6: 객체 배열 데이터 변환하기*/
+/*
 const movies = [{ title: '인셉션', director: '크리스토퍼 놀란' },{ title: '기생충', director: '봉준호' },{ title: '매트릭스', director: '워쇼스키 자매' }];
 const movieTitles = [ ]                                         // 1. 영화제목들을 저장하는 빈 배열 선언 
 for( let index = 0 ; index <= movies.length - 1 ; index++ ){    // 2. 0부터 마지막인덱스까지 배열 조회 
     movieTitles.push( movies[index].title )                     // 3. index번째 영화객체내 제목을 새로운배열에 추가 
 }
 console.log( movieTitles )
-
+*/
 /*문제 7: 데이터 그룹화하기: 다음 team 배열을 department를 기준으로 그룹화하여, 아래 result와 같은 형태로 만드시오.*/
+/*
 const team = [{ name: '철수', department: '개발팀' },{ name: '영희', department: '기획팀' },{ name: '민수', department: '개발팀' },{ name: '지혜', department: '기획팀' }];
 const result = { } // 1. 새롭게 구성할 빈 객체 선언 // {'개발팀': ['철수', '민수'],'기획팀': ['영희', '지혜']}
 for( let index = 0 ; index <= team.length - 1 ; index++ ) {// 2. team 배열을 순회한다.
@@ -93,27 +96,36 @@ for( let index = 0 ; index <= team.length - 1 ; index++ ) {// 2. team 배열을 
     }
 } // for end 
 console.log( result )
+*/
 
-
-
-/* 문제 8: 장바구니 총액 계산하기
-고객의 장바구니 정보를 담은 cart 배열과 상품 정보를 담은 productsInfo 배열이 있습니다.
-cart 배열: 각 요소는 고객이 담은 상품의 id와 quantity(수량)를 가집니다.
-productsInfo 배열: 각 요소는 상품의 고유 id와 price(가격)를 가집니다.
-cart 배열을 기준으로, 장바구니에 담긴 모든 상품의 총 결제 금액을 계산하여 콘솔에 출력하세요.
+/* 문제 8: 장바구니 총액 계산하기, cart 배열과 productsInfo 배열이 있습니다.*/
 const cart = [{ id: 1, quantity: 2 },{ id: 3, quantity: 1 }];
-const productsInfo = [
-{ id: 1, price: 1000 },
-{ id: 2, price: 5000 }, // 장바구니에 없는 상품
-{ id: 3, price: 2500 }
-];
-*/
+const productsInfo = [{ id: 1, price: 1000 },{ id: 2, price: 5000 }, { id: 3, price: 2500 }];
+let 총금액 = 0 // 
+for( let index = 0 ; index <= cart.length-1 ; index++ ){// 1. cart내 모든 id 조회한다.
+    let product = cart[index]; // 2. index번째의 객체(product) 꺼내기
+    for( let index2 = 0 ; index2 <= productsInfo.length - 1 ; index2++ ){ // 3. productsInfo 에서 index번째의 id 와 동일한 제품 id 찾는다.
+        let info = productsInfo[index2] // 4. index2번째의 객체(info) 꺼내기 
+        if( product.id == info.id ){ // 5. 만약에 cart객체 와 info객체가 id가 같다면 
+            총금액 += product.quantity * info.price; // 6. cart객체내 수량 과 info객체내 가격 곱한다.
+        }
+    }
+}
+console.log( 총금액 ) // 4500
+/* 문제 9: 투표 결과 집계하기*/
+const votes = ['A', 'B', 'B', 'C', 'A', 'B', 'A']; // 출력 예시: { A: 3, B: 3, C: 1 } // 7번 문제 참고 
+// const votes = 'ABBCABA' // 문자열은 배열이다.
+const result = { } // 1. 결과 저장하는 빈 객체 생성 
+for( let index = 0 ; index <= votes.length-1 ; index++ ) {// 2. 투표 결과를 조회한다.
+    if( votes[index] in result ){ // 3. index번째 값으로 result 객체내 속성명이 존재하면  
+        result[ votes[index] ] += 1 // 4. 해당 속성명에 득표수 1 증가 한다.
+    }else{
+        result[ votes[index] ] = 1; // 5. 존재하지 않으면 득표수 1 으로 초기화한다.
+    }
+}
+console.log( result )
 
-/* 문제 9: 투표 결과 집계하기
-다음 votes 배열은 투표 결과를 나타냅니다. 각 후보가 몇 표를 받았는지 집계하여, 후보의 이름이 키이고 득표수가 값인 객체를 만들어 콘솔에 출력하시오.
-const votes = ['A', 'B', 'B', 'C', 'A', 'B', 'A'];
-출력 예시: { A: 3, B: 3, C: 1 }
-*/
+
 
 /* 문제 10: 웹툰 평점 시각화하기
 webtoons 배열의 데이터를 이용하여, 각 웹툰의 평점을 별(★, ☆)로 시각화하여 HTML에 출력하시오.
