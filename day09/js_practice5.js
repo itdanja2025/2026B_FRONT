@@ -10,6 +10,7 @@ let product = { 제품명 , 가격 , 제조사 } // vs { '제품명' : 제품명
 console.log( product )
 */
 /*문제 2: prompt로 회원 가입 및 아이디 중복 확인 기능 구현*/
+/*
 const members = [{ id: 'user1', password: 'pass1', name: '사용자1' },{ id: 'user2', password: 'pass2', name: '사용자2' } ];
 let 아이디 = prompt( '아이디 입력 ')
 let 비밀번호 = prompt( '비밀번호 입력 ')
@@ -27,45 +28,53 @@ for( let index = 0 ; index <= members.length - 1 ; index++ ){ //
 } // for end // 반복문 종료되고 
 if( 중복체크 == true ){ console.log('이미 사용중인 아이디 입니다.'); }
 else{ console.log('등록했습니다.'); members.push( member ); }
-
-
-/*문제 3: 객체 배열의 속성 값 평균 구하기
-scores 배열에 담긴 모든 학생의 수학(math) 점수 평균을 계산하여 콘솔에 출력하시오.
-const scores = [
-{ name: 'A', math: 80, science: 92 },
-{ name: 'B', math: 95, science: 88 },
-{ name: 'C', math: 76, science: 78 }
-];
+console.log( members )
 */
 
-/*문제 4: 특정 조건을 만족하는 객체 찾기
-products 배열에서 id가 3인 상품 객체를 찾아, 해당 객체 전체를 콘솔에 출력하시오. 일치하는 객체가 없으면 "상품을 찾을 수 없습니다."를 출력합니다.
-const products = [
-{ id: 1, name: '사과' },
-{ id: 2, name: '바나나' },
-{ id: 3, name: '포도' },
-{ id: 4, name: '딸기' }
-];
+/*문제 3: 객체 배열의 속성 값 평균 구하기, scores 배열에 담긴 모든 학생의 수학(math) 점수 평균을 계산하여 콘솔에 출력하시오. */
+/*
+const scores = [{ name: 'A', math: 80, science: 92 },{ name: 'B', math: 95, science: 88 },{ name: 'C', math: 76, science: 78 }];
+let 총점수 = 0;
+for( let index = 0 ; index <= scores.length - 1 ; index++ ){ // ++ 반복문은 배열내 모든 자료들을 하나씩 순회/조회
+    // + 반복문 { } 안에서 선언(let/const) 된 변수는 { } 끝나거나 반복될때 마다 초기화(새롭게 선언 만든다.)
+    let 점수 = scores[ index ] // index번째의 점수객체 꺼내기 
+    총점수 += 점수.math // 점수객체내 math 속성값을 총점수에 더한다.
+}
+console.log( 총점수 / scores.length ) // 배열.length : 배열내 자료개수 반환 
+*/
+/*문제 4: 특정 조건을 만족하는 객체 찾기 */
+/*
+// products 배열에서 id가 3인 상품 객체를 찾아, 해당 객체 전체를 콘솔에 출력하시오. 일치하는 객체가 없으면 "상품을 찾을 수 없습니다."를 출력합니다.
+const products = [{ id: 1, name: '사과' },{ id: 2, name: '바나나' },{ id: 3, name: '포도' },{ id: 4, name: '딸기' }];
+let find = false; // 메모지 역할 처럼 조건을 찾았다 못찾았다 기록 변수  
+for( let index = 0 ; index <= products.length-1 ; index++ ){ // 문제2 와 동일하게 배열내 특정 객체의 속성값 조회시 모든 배열을 조회 해야한다.
+    if( products[index].id == 3 ){ 
+        find = true
+        console.log( products[i] )
+        break;  } // 찾았으면 반복문 종료 
+    // else{ } // 다음 index에 존재할 수 있으므로 상품 못찾은게 아니다.  // else 생략 
+} // for end 
+if( find == false ){ console.log( '상품을 찾을 수 없습니다.'); }
 */
 
-/*문제 5: 객체 배열 필터링하기
-users 배열에서 isActive가 true인 사용자들만으로 구성된 새로운 배열 activeUsers를 만들고, 이 배열을 콘솔에 출력하시오.
-const users = [
-{ id: 1, name: '유저1', isActive: true },
-{ id: 2, name: '유저2', isActive: false },
-{ id: 3, name: '유저3', isActive: true },
-{ id: 4, name: '유저4', isActive: false }
-];
-*/
+/*문제 5: 객체 배열 필터링하기 */
+const users = [{ id: 1, name: '유저1', isActive: true },{ id: 2, name: '유저2', isActive: false },{ id: 3, name: '유저3', isActive: true },{ id: 4, name: '유저4', isActive: false }];
+const activeUsers = [ ] // 1. 새로운 빈 배열 만든다. 
+for( let index = 0 ; index <= users.length-1 ; index++ ){// 2. 기존 배열을 0번 인덱스 부터 마지막 인덱스까지 순회
+    let user = users[index] // 3. index번째 의 객체 호출 한다,
+    if( user.isActive == true ) {// 4. 만약에 index번째의 객체내 isActive가 true 이면 
+        activeUsers.push( user ) // 5. 배열.push( 자료 ) , 배열내 자료 추가함수 
+    } // if end 
+} // for end 
+console.log( activeUsers )
 
-/*문제 6: 객체 배열 데이터 변환하기
-movies 배열에 있는 각 영화 객체에서 title 속성만 추출하여, 영화 제목들로만 이루어진 새로운 배열 movieTitles를 만들고 콘솔에 출력하시오.
-const movies = [
-{ title: '인셉션', director: '크리스토퍼 놀란' },
-{ title: '기생충', director: '봉준호' },
-{ title: '매트릭스', director: '워쇼스키 자매' }
-];
-*/
+/*문제 6: 객체 배열 데이터 변환하기*/
+const movies = [{ title: '인셉션', director: '크리스토퍼 놀란' },{ title: '기생충', director: '봉준호' },{ title: '매트릭스', director: '워쇼스키 자매' }];
+const movieTitles = [ ]                                         // 1. 영화제목들을 저장하는 빈 배열 선언 
+for( let index = 0 ; index <= movies.length - 1 ; index++ ){    // 2. 0부터 마지막인덱스까지 배열 조회 
+    movieTitles.push( movies[index].title )                     // 3. index번째 영화객체내 제목을 새로운배열에 추가 
+}
+console.log( movieTitles )
 
 /*문제 7: 데이터 그룹화하기
 다음 team 배열을 department를 기준으로 그룹화하여, 아래 result와 같은 형태로 만드시오.
