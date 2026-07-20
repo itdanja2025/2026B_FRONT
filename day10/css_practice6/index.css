@@ -16,7 +16,7 @@ a{
 }
 li{ list-style-type: none; } /* li 항목 글머리 제거 */
 
-/* [1] header */
+/* [1] ================= header ================= */
 #header{ 
     display: flex;
     justify-content: space-between;
@@ -33,3 +33,11 @@ li{ list-style-type: none; } /* li 항목 글머리 제거 */
     justify-content: end; 
     margin: 20px 0px;
 }
+.top-menu > li{ margin-left: 10px; }
+.main-menu > li{ 
+    margin-left: 50px;  /* 왼쪽 바깥 여백 */
+    font-size: 25px;    /* 글꼴 크기 */
+    font-weight: bold; /* 글꼴 진하게 */
+}
+/* ============================================== */
+#main-img > img{ width: 100%; } /* 이미지 100% 사이즈 */
