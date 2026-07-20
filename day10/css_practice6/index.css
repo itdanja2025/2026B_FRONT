@@ -1,5 +1,5 @@
 /* 전체 레이웃 확인 => 추후에 완성후 제거 예정 */
-
+*{ border: 1px solid red;}
 #header{ 
     width: 1280px; /* 구역 가로 사이즈 */
     margin: 0 auto; /* 구역 가로 가운데 정렬 */
@@ -67,5 +67,23 @@ li{ list-style-type: none; } /* li 항목 글머리 제거 */
 .content > img { 
     display: block; /* img 마크업은 display:inline 기본값 이므로 block 변경 */
     margin: 20px auto; 
+}
+/* ============================================== */
+
+/* [3] ================= footer ================= */
+#footer{
+    background-color: #2d2b29;
+    margin-top: 20px;
+}
+.footer-inner{
+    width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
+.right-foot{
+    color: white;
 }
 /* ============================================== */
