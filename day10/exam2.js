@@ -38,15 +38,27 @@ console.log( counter ) //  counter의 값을 콘솔에 출력 // 3
 function printNumbers( n ){ // 임의의 숫자 n을 매개변수로 받아
     for( let i = 1 ; i <= n ; i++ ){ console.log(i) } // 1부터 n까지의 숫자를 콘솔 출력 
     return
-}
+} // f end 
 printNumbers( 5 )
 
 
-/*예제 6: prompt와 함수 활용
-prompt를 이용해 사용자로부터 이름을 입력받으시오. 입력받은 이름을 매개변수로 받아, 해당 이름이 저장된 userList 전역 배열에 push하는 addUser 함수를 정의하고 호출하시오.*/
+/*예제 6: prompt와 함수 활용, prompt를 이용해 사용자로부터 이름을 입력받으시오. 
+입력받은 이름을 매개변수로 받아, 해당 이름이 저장된 userList 전역 배열에 push하는 addUser 함수를 정의하고 호출하시오.*/
+let 이름 = prompt( '이름 : ')
+let userList = [ ]
+function addUser( name ){ // 입력받은 이름을 매개변수로 받아
+    userList.push( name ) // userList 전역 배열에 push
+    return
+}
+addUser( 이름 )
 
-/*예제 7: 배열을 매개변수로 전달
-임의의 이름 들이 담긴 배열을 매개변수로 받아, for 반복문을 사용하여 배열의 모든 요소를 콘솔에 하나씩 출력하는 printFruits 함수를 정의하시오. */
+/*예제 7: 배열을 매개변수로 전달, 임의의 이름 들이 담긴 배열을 매개변수로 받아, for 반복문을 사용하여 배열의 모든 요소를 콘솔에 하나씩 출력하는 printFruits 함수를 정의하시오. */
+function printFruits( nameList ){ // 임의의 이름 들이 담긴 배열을 매개변수로 받아
+    for( let index = 0 ; index <= nameList.length - 1 ; index++ ){
+        console.log( nameList[index] ) // index번째 값 출력 
+    } // for end 
+} // f end 
+printFruits( ['사과' , '포도' , '바나나' ] ) // 임의의 이름 들이 담긴 배열
 
 /*예제 8: Boolean 값 반환하기
 임의의 숫자 하나를 매개변수로 받아, 그 숫자가 0보다 크면 true를, 그렇지 않으면 false를 반환하는 isPositive 함수를 만들어 보세요. */
