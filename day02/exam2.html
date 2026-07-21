@@ -1,0 +1,71 @@
+<!DOCTYPE html>     <!-- HTML 주석 -->   <!-- HTML5 버전 알림 / 생략가능 -->
+<html>    <!-- HTML 시작 -->
+
+    <head>      <!-- HTML 헤더(옵션) 시작 -->
+        <meta charset='utf-8'>  <!-- HTML 코드의 번역(인코딩)방법 : UTF-8 한글지원 -->
+        <title> DAY02 EXAM2 </title> <!-- HTML 문서 제목(브라우저 탭 표시) -->
+    </head>     <!-- HTML 헤더(옵션) 끝 -->
+
+    <body>      <!-- HTML 본문 시작 -->
+        안녕하세요.
+        <h1> 안녕하세요1 </h1>          <!-- h1 ~ h6 : 제목 마크업 -->
+        <h2> 안녕하세요2 </h2>
+        <h3> 안녕하세요3 </h3>
+        <h4> 안녕하세요4 </h4>
+        <h5> 안녕하세요5 </h5>
+        <h6> 안녕하세요6 </h6>
+        <h7> 안녕하세요7 </h7>          <!-- h7 없는 마크업 : CSS직접꾸미기 -->
+        
+        문단1
+        문단2
+        <p> 문단1 </p>                  <!-- p : 문단 마크업 -->
+        <p> 문단2 </p>
+
+        줄바꿈1 <br /> 줄바꿈2 <br />   <!-- br : 줄바꿈 -->
+
+        <hr />                          <!-- hr : 구분선 -->
+        
+        <span> 한칸1 </span>            <!-- span : 인라인 구역 -->
+        <span> 한칸2 </span>
+        
+        <div> 한칸3 </div>              <!-- div : 블럭 구역 : 추후에 레이아웃 작업-->
+        <div> 한칸4 </div>
+
+        <ol>                            <!-- ol : 순서있는 목록 -->
+            <li> 항목1 </li>            <!-- li : 항목 -->
+            <li> 항목2 </li>
+        </ol>
+
+        <ul>                            <!-- ul : 순서없는 목록 -->
+            <li> 항목1 </li>
+            <li> 항목2 </li>
+        </ul>
+
+        <a href="https://www.naver.com"> 네이버 링크 </a>        <!-- a : 하이퍼링크 -->
+        <a href="exam1.html"> 'exam1' HTML 이동 </a>
+        <a href="tel:010-3913-2072"> 모바일에서 전화앱 </a>
+
+        <img src = "./맹구.jpg" />                                        <!-- img : 이미지 마크업 -->
+        <img src = "../맹구.jpg" />
+        <!-- 상대경로란? 현재 코드를 작성하는 위치 기준으로 불러올 파일의 경로 지정 -->
+        <!-- 
+            ./ : 현재폴더이며생략가능  
+            ../ : 상위폴더1번이동       , day02 폴더 기준으로 상위폴더 1번이동 하면 2026B_FRONT 경로
+            ../../ : 상위폴더2번이동 
+        -->
+        <!-- 절대경로란? 불러올 파일의 전체 경로 지정 , 로컬 vs 서버(네트워크로 자료 제공하는 PC)  -->
+        <img src = "C:\Users\pc\Desktop\2026B_FRONT\day02\맹구.jpg" />
+        <img src = "http://127.0.0.1:5500/day02/맹구.jpg" />
+
+        <br />
+        <audio src="오디오.mp3" controls autoplay > </audio>    <!-- audio : 오디오 마크업 -->
+        <video src="비디오.mp4" controls autoplay muted > </video>     <!-- video : 오디오 마크업 -->
+        <!-- autoplay 브라우저 정책상 불가능하다. 단 muted(음소거) 하면 가능하다. -->
+
+        <!-- 유튜브 영상 퍼가기 -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/PYEiyqWI_QU?si=fwP2tQLuJiriMVSD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <!-- 구글 지도 퍼가기 -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x357b67b86fa90ca9%3A0x50ab76efd5310e0d!2z7ISx6rKw64yA7ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1783414951855!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        
+    </body>     <!-- HTML 본문 끝 -->
+</html>     <!-- HTML  끝  -->
