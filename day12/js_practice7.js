@@ -18,6 +18,9 @@ function 등록함수( ){
     // vs let 객체 = { 날짜 : 날짜 , 항목 : 항목 , 금액 : 금액 }
     가계부목록.push( 객체 ) // 3. 배열 저장
     alert('등록성공') // 4. 성공 안내
+    document.querySelector('.날짜입력').value = '' // 입력받은 값들을 초기화
+    document.querySelector('.항목입력').value = ''
+    document.querySelector('.금액입력').value = ''
     출력함수( ) // ****** [2] 등록 성공시 출력함수 실행 ******* 
 } // f end 
 
