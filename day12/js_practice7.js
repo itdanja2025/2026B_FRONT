@@ -18,4 +18,25 @@ function 등록함수( ){
     // vs let 객체 = { 날짜 : 날짜 , 항목 : 항목 , 금액 : 금액 }
     가계부목록.push( 객체 ) // 3. 배열 저장
     alert('등록성공') // 4. 성공 안내
+    출력함수( ) // ****** [2] 등록 성공시 출력함수 실행 ******* 
 } // f end 
+
+function 출력함수( ){
+    // 1. 어디에
+    let 테이블 = document.querySelector('table > tbody')
+    // 2. 무엇을 , 배열내 모든 자료(객체)들을 HTML(문자) 형식으로 
+    let html = ""
+    for( let index = 0 ; index <= 가계부목록.length-1 ; index++ ){
+        let 가계부 = 가계부목록[index]; // index번째 가계부객체1개
+        // 주의할점 : html = 대입(기존자료사라짐) 
+                // vs html += 누적(기존자료뒤에연결)
+        html += `<tr>
+                    <td> ${ 가계부.날짜 } </td>
+                    <td> ${ 가계부.항목 } </td>
+                    <td> ${ 가계부.금액.toLocaleString() } 원 </td>
+                </tr>`
+    } // for end 
+    // 3. 출력 
+    테이블.innerHTML = html;
+} // f end 
+출력함수( ) // ****** [1] JS실행되면 아무조건없이 함수1번실행 
